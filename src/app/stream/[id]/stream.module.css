@@ -1,0 +1,493 @@
+/* ========== Stream Page Layout ========== */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+/* ========== Top Bar ========== */
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+}
+
+.backBtn {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.backBtn:hover {
+    color: var(--primary-color);
+}
+
+.streamTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.streamLive {
+    color: #ff3333;
+    font-size: 0.75rem;
+    font-weight: 700;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.viewerCount {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ========== Content ========== */
+.content {
+    flex: 1;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+}
+
+/* ========== Video Area ========== */
+.videoArea {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #000;
+}
+
+.videoWrapper {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 42, 95, 0.2);
+    box-shadow: 0 0 40px rgba(255, 42, 95, 0.08);
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #0a0a0a;
+}
+
+.videoOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.overlayContent {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.overlayIcon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.overlayHint {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Queue Position Display */
+.queuePosition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.queueNumber {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.queueLabel {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.leaveBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+
+.leaveBtn:hover {
+    background: rgba(255, 50, 50, 0.3);
+    border-color: rgba(255, 50, 50, 0.5);
+}
+
+/* Timer Overlay */
+.timerOverlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 5;
+}
+
+.timer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: monospace;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timerWarning {
+    color: #ff3333;
+    border-color: rgba(255, 50, 50, 0.5);
+    animation: timerBlink 1s infinite;
+}
+
+@keyframes timerBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 1px solid var(--glass-border);
+    overflow-y: auto;
+    background: rgba(8, 8, 8, 0.95);
+}
+
+.sidePanel {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--glass-border);
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--glass-border);
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.sidePanelTitle {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* ========== Package Selector ========== */
+.packageList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.packageCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: left;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.packageCard:hover {
+    background: rgba(255, 42, 95, 0.08);
+    border-color: rgba(255, 42, 95, 0.3);
+}
+
+.packageSelected {
+    background: rgba(255, 42, 95, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(255, 42, 95, 0.15);
+}
+
+.packageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.packageName {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.packagePrice {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.packageTime {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.joinBtn {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(255, 42, 95, 0.3);
+}
+
+.joinBtn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 42, 95, 0.4);
+}
+
+.joinBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ========== Queue List ========== */
+.queueList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.queueEmpty {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.queueItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.85rem;
+}
+
+.queueItemActive {
+    background: rgba(0, 255, 100, 0.08);
+    border: 1px solid rgba(0, 255, 100, 0.15);
+}
+
+.queueItemMe {
+    background: rgba(255, 42, 95, 0.1);
+    border: 1px solid rgba(255, 42, 95, 0.2);
+}
+
+.queueItemPos {
+    font-weight: 700;
+    color: var(--text-secondary);
+    min-width: 24px;
+}
+
+.queueItemName {
+    flex: 1;
+    font-weight: 500;
+}
+
+.queueItemPkg {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.queueItemLive {
+    color: #00ff66;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ========== Session Info ========== */
+.sessionInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sessionTimer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.sessionTimeLabel {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sessionTimeValue {
+    font-family: monospace;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00ff66;
+}
+
+.sessionPkg {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.endSessionBtn {
+    width: 100%;
+    background: rgba(255, 50, 50, 0.15);
+    color: #ff6666;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.endSessionBtn:hover {
+    background: rgba(255, 50, 50, 0.3);
+    border-color: rgba(255, 50, 50, 0.5);
+}
+
+.controlsNote {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Spinner */
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--glass-border);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== Mobile Responsive ========== */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--glass-border);
+    }
+
+    .videoArea {
+        padding: 0.5rem;
+    }
+
+    .videoWrapper {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topBar {
+        padding: 0.5rem 1rem;
+    }
+
+    .streamTitle {
+        font-size: 0.8rem;
+    }
+
+    .sidePanel {
+        padding: 1rem;
+    }
+
+    .queueNumber {
+        font-size: 2rem;
+    }
+
+    .sessionTimeValue {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,379 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255, 42, 95, 0.08) 0%, transparent 60%);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brandIcon {
+    font-size: 1.6rem;
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mainCard {
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.qrSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.qrWrapper {
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(255, 42, 95, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.qrWrapper:hover {
+    box-shadow: 0 0 60px rgba(255, 42, 95, 0.25);
+}
+
+.urlDisplay {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    user-select: all;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.urlDisplay:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.linkIcon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.stepsCard {
+    padding: 1.5rem 2rem;
+}
+
+.stepsTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.stepNumber {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.stepText {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-top: 3px;
+}
+
+.stepText strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.statusSection {
+    padding: 1.5rem 2rem;
+}
+
+.statusHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.statusTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.refreshBtn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.refreshBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.interfaceList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.interfaceItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.2s ease;
+}
+
+.interfaceItem:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.interfaceName {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+}
+
+.interfaceIp {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+}
+
+.preferred {
+    border-color: rgba(255, 42, 95, 0.3);
+    background: rgba(255, 42, 95, 0.05);
+}
+
+.preferredBadge {
+    font-size: 0.7rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 42, 95, 0.2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.errorText {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .mainCard,
+    .stepsCard,
+    .statusSection {
+        padding: 1.2rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .methodButtons {
+        flex-direction: column !important;
+    }
+}
+
+/* Connection Method Selector */
+.methodCard {
+    padding: 1.5rem 2rem;
+}
+
+.methodButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.methodBtn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.methodBtn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.methodActive {
+    border-color: var(--primary-color);
+    background: rgba(255, 42, 95, 0.08);
+    color: var(--text-primary);
+}
+
+.methodIcon {
+    font-size: 1.8rem;
+}
+
+.methodLabel {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.methodDesc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Warning Card */
+.warningCard {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-color: rgba(255, 180, 0, 0.3);
+    background: rgba(255, 180, 0, 0.05);
+}
+
+.warningIcon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.warningText {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 4px 0 0;
+    line-height: 1.4;
+}
+
+/* Interface info layout */
+.interfaceInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.interfaceType {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.dimmed {
+    opacity: 0.5;
+}
